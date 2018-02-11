@@ -1,0 +1,57 @@
+<div class="container pad-top">
+  <form class="form-horizontal" role="form" [formGroup]="shipform" autocomplete="off">
+    <div class="form-group">
+      <label for="name" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-5">
+        <input type="text" formControlName="name" class="form-control" placeholder="Shipwreck Name" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-sm-2 control-label">Description</label>
+      <div class="col-sm-5">
+        <input type="text" formControlName="description" class="form-control" placeholder="Shipwreck Description" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="condition" class="col-sm-2 control-label">Condition</label>
+      <div class="col-sm-5">
+        <select formControlName="condition" class="form-control">
+          <option disabled>Shipwreck Condition</option>
+          <option *ngFor="let condition of conditions">{{condition}}</option>
+        </select>
+        <!-- <input type="text" formControlName="condition" class="form-control" placeholder="Shipwreck Condition" /> -->
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="yearDiscovered" class="col-sm-2 control-label">Year Discovered</label>
+      <div class="col-sm-5">
+        <input type="text" formControlName="yearDiscovered" class="form-control" [maxLength]="4" numberOnly="true" placeholder="When was the shipwreck discovered?"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="depth" class="col-sm-2 control-label">Depth of Wreck</label>
+      <div class="col-sm-5">
+        <input type="text" formControlName="depth" class="form-control" numberOnly="true" placeholder="Shipwreck dive depth" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="latitude" class="col-sm-2 control-label">Latitude</label>
+      <div class="col-sm-5">
+        <input type="text" formControlName="latitude" class="form-control" numberOnly="true" placeholder="Latitude" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="longitude" class="col-sm-2 control-label">Longitude</label>
+      <div class="col-sm-5">
+        <input type="text" formControlName="longitude" class="form-control" id="longitude" numberOnly="true" placeholder="Longitude" />
+      </div>
+    </div>
+  </form>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+      <button class="btn btn-primary" (click)="addShipwreck()">{{buttonLable}}</button>
+      <button class="btn btn-danger" (click)="resetShipwreck()"> Cancel</button>
+    </div>
+  </div>
+</div>

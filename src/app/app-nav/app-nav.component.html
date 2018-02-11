@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand nav-bar-color" target="_blank">{{navTitle}}</a>
+  <div id="navbar" class="navbar-collapse navbar-collapse-custom">
+    <ul class="nav navbar-nav nav_menu full-width">
+      <li *ngFor="let nav of navList" class="nav_menu" routerLinkActive="['active']">
+        <a class="nav-item nav-link" [routerLink]="[nav.routePath]" routerLinkActive="['active']">
+          {{nav.description}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

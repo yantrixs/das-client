@@ -1,0 +1,18 @@
+<div class="container pad-top">
+    <a [routerLink]="['/newShipwreck']" class="btn-primary btn-lg nodecoration">Add New Shipwreck</a>
+    <table class="table shipwrecktable">
+        <tr>
+            <td><h3>All Shipwrecks</h3></td>
+            <td></td>
+        </tr>
+        <tr *ngFor="let shipwreck of shipwrecks">
+            <td>{{shipwreck.name}}</td>
+            <td>{{shipwreck.description}}</td>
+            <td>{{shipwreck.yearDiscovered}}</td>
+            <td>
+                <a class="btn btn-primary" (click)="viewShipwreck(shipwreck)">View</a>
+                <a class="btn btn-danger"  (click)="deleteShipwreck(shipwreck.id)">Delete</a>
+            </td>
+        </tr>
+    </table>
+  </div>
